@@ -1,0 +1,31 @@
+Command line: /Users/jackeng/.local/share/mamba/envs/eve/bin/rnaspades.py	-s	/Users/jackeng/EVE_project/visual_viral/results/hela/part1/unmapped.fastq.gz	-o	/Users/jackeng/EVE_project/visual_viral/results/hela/part1/assembly	-t	4	-m	8	
+
+System information:
+  SPAdes version: 4.3.0
+  Python version: 3.11.17
+  OS: macOS-27.2.1-x86_64-i386-64bit
+
+Output dir: /Users/jackeng/EVE_project/visual_viral/results/hela/part1/assembly
+Debug mode is turned OFF
+
+Dataset parameters:
+  RNA-seq mode
+  Reads:
+    Library number: 1, library type: single
+      left reads: not specified
+      right reads: not specified
+      interlaced reads: not specified
+      single reads: ['/Users/jackeng/EVE_project/visual_viral/results/hela/part1/unmapped.fastq.gz']
+      merged reads: not specified
+Assembly parameters:
+  k: automatic selection based on read length
+  Repeat resolution is enabled
+  Mismatch careful mode is turned OFF
+  MismatchCorrector will be SKIPPED
+  Coverage cutoff is turned OFF
+  Assembly graph output will use GFA v1.2 format
+Other parameters:
+  Dir for temp files: /Users/jackeng/EVE_project/visual_viral/results/hela/part1/assembly/tmp
+  Threads: 4
+  Memory limit (in Gb): 8
+

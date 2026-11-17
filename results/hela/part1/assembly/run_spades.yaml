@@ -1,0 +1,105 @@
+- STAGE: Before start
+  args: []
+  config_dir: ''
+  del_after: []
+  job_uuid: SPAdes_Before_start_ZRMBJ0T1NK9M1GCH9EFQJZHSWHVKOBB8
+  mpi_support: false
+  output_files: []
+  path: 'true'
+  short_name: before_start
+- STAGE: Assembling
+  args: []
+  config_dir: ''
+  del_after: []
+  job_uuid: SPAdes_Assembling_78VDBE7UN92RPJOEJ9P71DIABBKYIO0V
+  mpi_support: false
+  output_files: []
+  path: 'true'
+  short_name: as_start
+- STAGE: K33
+  args:
+  - /Users/jackeng/EVE_project/visual_viral/results/hela/part1/assembly/K33/configs/config.info
+  - /Users/jackeng/EVE_project/visual_viral/results/hela/part1/assembly/K33/configs/mda_mode.info
+  - /Users/jackeng/EVE_project/visual_viral/results/hela/part1/assembly/K33/configs/rna_mode.info
+  config_dir: K33
+  del_after: []
+  job_uuid: SPAdes_K33_NQP3T1V5XDWMSDNAUGYITR4NTEE3BZRX
+  mpi_support: false
+  output_files: []
+  path: /Users/jackeng/.local/share/mamba/envs/eve/bin/spades-core
+  short_name: k33
+- STAGE: K49
+  args:
+  - /Users/jackeng/EVE_project/visual_viral/results/hela/part1/assembly/K49/configs/config.info
+  - /Users/jackeng/EVE_project/visual_viral/results/hela/part1/assembly/K49/configs/mda_mode.info
+  - /Users/jackeng/EVE_project/visual_viral/results/hela/part1/assembly/K49/configs/rna_mode.info
+  config_dir: K49
+  del_after: []
+  job_uuid: SPAdes_K49_ACVRUO4F5KXYNNCVVG8RSGHFKWSTZSJT
+  mpi_support: false
+  output_files: []
+  path: /Users/jackeng/.local/share/mamba/envs/eve/bin/spades-core
+  short_name: k49
+- STAGE: Copy files
+  args:
+  - /Users/jackeng/.local/share/mamba/envs/eve/share/spades/spades_pipeline/supplemetary/copy_files.py
+  - /Users/jackeng/EVE_project/visual_viral/results/hela/part1/assembly/K49/before_rr.fasta
+  - /Users/jackeng/EVE_project/visual_viral/results/hela/part1/assembly/before_rr.fasta
+  - /Users/jackeng/EVE_project/visual_viral/results/hela/part1/assembly/K49/assembly_graph_after_simplification.gfa
+  - /Users/jackeng/EVE_project/visual_viral/results/hela/part1/assembly/assembly_graph_after_simplification.gfa
+  - /Users/jackeng/EVE_project/visual_viral/results/hela/part1/assembly/K49/transcripts.fasta
+  - /Users/jackeng/EVE_project/visual_viral/results/hela/part1/assembly/transcripts.fasta
+  - /Users/jackeng/EVE_project/visual_viral/results/hela/part1/assembly/K49/transcripts.paths
+  - /Users/jackeng/EVE_project/visual_viral/results/hela/part1/assembly/transcripts.paths
+  - /Users/jackeng/EVE_project/visual_viral/results/hela/part1/assembly/K49/assembly_graph_with_scaffolds.gfa
+  - /Users/jackeng/EVE_project/visual_viral/results/hela/part1/assembly/assembly_graph_with_scaffolds.gfa
+  - /Users/jackeng/EVE_project/visual_viral/results/hela/part1/assembly/K49/assembly_graph.fastg
+  - /Users/jackeng/EVE_project/visual_viral/results/hela/part1/assembly/assembly_graph.fastg
+  - /Users/jackeng/EVE_project/visual_viral/results/hela/part1/assembly/K49/hard_filtered_final_paths.fasta
+  - /Users/jackeng/EVE_project/visual_viral/results/hela/part1/assembly/hard_filtered_transcripts.fasta
+  - /Users/jackeng/EVE_project/visual_viral/results/hela/part1/assembly/K49/soft_filtered_final_paths.fasta
+  - /Users/jackeng/EVE_project/visual_viral/results/hela/part1/assembly/soft_filtered_transcripts.fasta
+  config_dir: ''
+  del_after:
+  - .bin_reads
+  - tmp/spades_gqr_a93w
+  job_uuid: SPAdes_Copy_files_EUMAUSYOTD51P1U4MBNDU2ZIUU6Y6ZL7
+  mpi_support: false
+  output_files: []
+  path: /Users/jackeng/.local/share/mamba/envs/eve/bin/python3
+  short_name: copy_files
+- STAGE: Assembling
+  args: []
+  config_dir: ''
+  del_after: []
+  job_uuid: SPAdes_Assembling_OI95BF7GJU3104A19FDKWY2UIEAYPS6F
+  mpi_support: false
+  output_files: []
+  path: 'true'
+  short_name: as_finish
+- STAGE: Breaking scaffolds
+  args:
+  - /Users/jackeng/.local/share/mamba/envs/eve/share/spades/spades_pipeline/supplemetary/breaking_scaffolds_script.py
+  - --result_scaffolds_filename
+  - /Users/jackeng/EVE_project/visual_viral/results/hela/part1/assembly/scaffolds.fasta
+  - --misc_dir
+  - /Users/jackeng/EVE_project/visual_viral/results/hela/part1/assembly/misc
+  - --threshold_for_breaking_scaffolds
+  - '3'
+  config_dir: ''
+  del_after: []
+  job_uuid: SPAdes_Breaking_scaffolds_F15VFC36GXPM8XHHHRYU42HABXZ2UWXS
+  mpi_support: false
+  output_files: []
+  path: /Users/jackeng/.local/share/mamba/envs/eve/bin/python3
+  short_name: bs
+- STAGE: Terminate
+  args: []
+  config_dir: ''
+  del_after:
+  - configs
+  job_uuid: SPAdes_Terminate_C9YDQ6M9R2ZRVM69SIJDEVUNQJBD9HGH
+  mpi_support: false
+  output_files: []
+  path: 'true'
+  short_name: terminate
