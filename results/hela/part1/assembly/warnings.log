@@ -1,4 +1,0 @@
-
-=== Error correction and assembling warnings:
- * 0:00:00.000     1M / 9M    WARN    General                 (memory_limit.cpp          :  53)   Failed to limit memory to 8 Gb, setrlimit(2) call failed, errno = 22 (Invalid argument). Watch your memory consumption!
-======= Warnings saved to /Users/jackeng/EVE_project/visual_viral/results/hela/part1/assembly/warnings.log

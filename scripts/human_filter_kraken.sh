@@ -166,6 +166,12 @@ else
     UNMAPPED1="$OUT/unmapped.fastq.gz"
 fi
 
+# Extract reads containing soft clipping
+samtools view -h -F 0x904 "$OUT/human_alignments.bam" |
+    awk '/^@/ || $6 ~ /[0-9]+S/' |
+    samtools view -b \
+        -o "$OUT/softclipped_reads.bam" -
+
 # A gzip file may be nonempty even if it contains zero FASTQ records.
 has_fastq_reads() {
     [[ -f "$1" ]] && gzip -cd "$1" | awk 'END { exit (NR < 4 || NR % 4 != 0) }'
